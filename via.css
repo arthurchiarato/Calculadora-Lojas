@@ -1,0 +1,98 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: #fff; /* Cor de fundo cinza claro */
+  margin: 0;
+  padding: 0;
+  color: #fff; /* Cor do texto padrão */
+}
+
+.container {
+  width: 360px;
+  margin: 50px auto;
+  padding: 25px;
+  background: #000; /* Fundo cinza escuro para o container */
+  border-radius: 15px; /* Bordas arredondadas */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  border: 1px solid #444; /* Borda cinza escura */
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  color: #e0e0e0; /* Cinza claro para o título */
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase; /* Maiúsculas para destaque */
+}
+
+.logo-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.logo {
+  max-width: 80px; /* Ajuste conforme o tamanho desejado */
+  height: auto;
+}
+
+input {
+  width: calc(100% - 20px); /* Ajuste para incluir o padding */
+  padding: 10px;
+  border: 1px solid #666; /* Borda cinza médio */
+  border-radius: 8px;
+  margin: 10px 0;
+  color: #000; /* Preto para o texto do input */
+  background: #fff; /* Branco para o fundo do input */
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #444; /* Cinza escuro para o botão */
+  color: #fff; /* Branco para o texto do botão */
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px 0;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background: #555; /* Cinza um pouco mais claro para o hover */
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais suave ao passar o mouse */
+}
+
+h2 {
+  font-size: 22px;
+  color: #e0e0e0; /* Cinza claro para o título secundário */
+  margin-top: 20px;
+}
+
+label, .preco {
+  display: block;
+  background: #000; /* Fundo cinza escuro */
+  color: #e0e0e0; /* Texto cinza claro */
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+input[type="number"] {
+  background: #444; /* Fundo cinza escuro para o input */
+  color: #fff; /* Texto cinza claro */
+  border: 1px solid #666; /* Borda cinza médio */
+}
+
+#preco {
+  font-size: 22px;
+  font-weight: bold;
+  background: #333; /* Fundo cinza escuro para o resultado */
+  color: #e0e0e0; /* Texto cinza claro */
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
