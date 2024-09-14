@@ -96,3 +96,24 @@ input[type="number"] {
   border-radius: 8px;
   margin-top: 20px;
 }
+
+.back-button {
+  width: 70px;
+  position: fixed;
+    top: 2px;
+    left: 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background: #000; /* Amarelo mais escuro para o hover */
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra do botão ao passar o mouse */
+}
