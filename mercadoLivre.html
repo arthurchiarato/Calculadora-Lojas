@@ -43,10 +43,10 @@
         <button onclick="calcularMercadoLivre()">Calcular Preço</button>
 
         <h2>Resultados</h2>
-        <p id="preco_0">Preço com Margem de 0%: R$ 0,00</p>
-        <p id="preco_7">Preço com Margem de 7%: R$ 0,00</p>
-        <p id="preco_10">Preço com Margem de 10%: R$ 0,00</p>
-        <p id="preco_15">Preço com Margem de 15%: R$ 0,00</p>
+        <p id="preco_0">Preço com margem 0%: R$ 0,00</p>
+        <p id="preco_7">Preço com margem 7%: R$ 0,00</p>
+        <p id="preco_10">Preço com margem 10%: R$ 0,00</p>
+        <p id="preco_15">Preço com margem 15%: R$ 0,00</p>
     </div>
 
     <script>
@@ -108,10 +108,10 @@
             let precoVenda10 = calcularPrecoVenda(10); // Margem de 10%
             let precoVenda15 = calcularPrecoVenda(15); // Margem de 15%
 
-            document.getElementById('preco_0').innerText = 'Preço com Margem de 0%: R$ ' + precoVenda0.toFixed(2);
-            document.getElementById('preco_7').innerText = 'Preço com Margem de 7%: R$ ' + precoVenda7.toFixed(2);
-            document.getElementById('preco_10').innerText = 'Preço com Margem de 10%: R$ ' + precoVenda10.toFixed(2);
-            document.getElementById('preco_15').innerText = 'Preço com Margem de 15%: R$ ' + precoVenda15.toFixed(2);
+            document.getElementById('preco_0').innerText = 'Preço com margem 0%: R$ ' + precoVenda0.toFixed(2);
+            document.getElementById('preco_7').innerText = 'Preço com margem 7%: R$ ' + precoVenda7.toFixed(2);
+            document.getElementById('preco_10').innerText = 'Preço com margem 10%: R$ ' + precoVenda10.toFixed(2);
+            document.getElementById('preco_15').innerText = 'Preço com margem 15%: R$ ' + precoVenda15.toFixed(2);
         }
     </script>
 </body>
