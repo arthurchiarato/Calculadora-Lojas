@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Mercado Livre</title>
+    <link rel="stylesheet" href="mercadoLivre.css">
+</head>
+<body>
+    <button class="return-button" onclick="window.location.href='marketplace.html';">Voltar</button>
+    <div class="container">
+
+        <div class="logo-container">
+            <img src="https://i.postimg.cc/hGrbW7zb/Design-sem-nome-3.png" class="logo">
+        </div>
+
+        <h1>Calculadora Mercado Livre</h1>
+
+        <div class="field-container">
+            <div>
+                <label for="custo">Custo do Produto:</label>
+                <input type="number" id="custo" placeholder="Ex: 100" step="0.01">
+            </div>
+            <div>
+                <label for="peso">Peso do Produto (g):</label>
+                <input type="number" id="peso" placeholder="Ex: 500" step="0.01">
+            </div>
+        </div>
+
+        <label for="imposto">Escolha o Imposto:</label>
+        <select id="imposto">
+            <option value="7">Exposição - 7%</option>
+            <option value="4">Via Closet - 4%</option>
+            <option value="10">GIP - 10%</option>
+        </select><br>
+
+        <label for="anuncio">Tipo de Anúncio:</label>
+        <select id="anuncio">
+            <option value="14">Anúncio Clássico - 14%</option>
+            <option value="16">Anúncio Premium - 16%</option>
+        </select><br>
+
+        <button onclick="calcularMercadoLivre()">Calcular Preço</button>
+
+        <h2>Resultados</h2>
+        <p id="preco_0">Preço com Margem de 0%: R$ 0,00</p>
+        <p id="preco_7">Preço com Margem de 7%: R$ 0,00</p>
+        <p id="preco_10">Preço com Margem de 10%: R$ 0,00</p>
+        <p id="preco_15">Preço com Margem de 15%: R$ 0,00</p>
+    </div>
+
+    <script>
+        function calcularMercadoLivre() {
+            let custoElement = document.getElementById('custo');
+            let pesoElement = document.getElementById('peso');
+            let impostoElement = document.getElementById('imposto');
+            let anuncioElement = document.getElementById('anuncio');
+
+            if (!custoElement || !pesoElement || !impostoElement || !anuncioElement) {
+                alert("Erro ao carregar os campos. Verifique os IDs no HTML.");
+                return;
+            }
+
+            let custo = parseFloat(custoElement.value);
+            let peso = parseFloat(pesoElement.value);
+            let imposto = parseFloat(impostoElement.value);
+            let comissao = parseFloat(anuncioElement.value);
+
+            if (isNaN(custo) || custo <= 0) {
+                alert("Por favor, insira um valor de custo válido.");
+                return;
+            }
+
+            if (isNaN(peso) || peso <= 0) {
+                alert("Por favor, insira um valor de peso válido.");
+                return;
+            }
+
+            if (isNaN(imposto)) {
+                alert("Por favor, selecione um imposto válido.");
+                return;
+            }
+
+            let taxaFixa;
+            if (peso <= 300) {
+                taxaFixa = 19.95;
+            } else if (peso <= 500) {
+                taxaFixa = 20.45;
+            } else if (peso <= 1000) {
+                taxaFixa = 21.45;
+            } else if (peso <= 2000) {
+                taxaFixa = 22.95;
+            } else {
+                alert("Peso fora dos limites permitidos.");
+                return;
+            }
+
+            let embalagem = 1.5; // Custo fixo de embalagem de R$ 1,5
+            let custoAdicional = custo < 79 ? 6 : 0; // Custo adicional se o valor do anúncio for menor que R$ 79
+
+            function calcularPrecoVenda(margem) {
+                let precoVenda = (custo + embalagem + taxaFixa + custoAdicional) / (1 - imposto / 100 - margem / 100 - comissao / 100);
+                return precoVenda;
+            }
+
+            let precoVenda0 = calcularPrecoVenda(0); // Margem de 0%
+            let precoVenda7 = calcularPrecoVenda(7); // Margem de 7%
+            let precoVenda10 = calcularPrecoVenda(10); // Margem de 10%
+            let precoVenda15 = calcularPrecoVenda(15); // Margem de 15%
+
+            document.getElementById('preco_0').innerText = 'Preço com Margem de 0%: R$ ' + precoVenda0.toFixed(2);
+            document.getElementById('preco_7').innerText = 'Preço com Margem de 7%: R$ ' + precoVenda7.toFixed(2);
+            document.getElementById('preco_10').innerText = 'Preço com Margem de 10%: R$ ' + precoVenda10.toFixed(2);
+            document.getElementById('preco_15').innerText = 'Preço com Margem de 15%: R$ ' + precoVenda15.toFixed(2);
+        }
+    </script>
+</body>
+</html>

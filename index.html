@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha sua calculadora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Escolha o tipo de calculadora</h1>
+        <button onclick="redirecionar('marketplace')">Marketplace</button>
+        <button onclick="redirecionar('lojas')">Lojas Físicas</button>
+    </div>
+
+    <script>
+        function redirecionar(tipo) {
+            if (tipo === 'marketplace') {
+                window.location.href = 'marketplace.html'; // Redireciona para a tela de calculadoras do marketplace
+            } else if (tipo === 'lojas') {
+                window.location.href = 'lojas.html'; // Redireciona para a tela de calculadoras das lojas físicas
+            }
+        }
+    </script>
+</body>
+</html>

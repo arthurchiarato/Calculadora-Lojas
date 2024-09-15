@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Shopee</title>
+    <link rel="stylesheet" href="shopee.css">
+</head>
+<body>
+    <button class="return-button" onclick="window.location.href='marketplace.html';">Voltar</button>
+    <div class="container">
+        
+        <div class="logo-container">
+            <img src="https://i.postimg.cc/mD1CFGH5/Design-sem-nome-1.png" class="logo">
+        </div>
+        
+        <h1>Calculadora Shopee</h1>
+
+        <label for="custo">Custo do Produto:</label>
+        <input type="number" id="custo" placeholder="Ex: 100" step="0.01"><br>
+
+        <button onclick="calcularShopee()">Calcular Preço</button>
+
+        <h2>Resultados</h2>
+        <p id="preco_0">Preço com margem 0%: R$ 0,00</p>
+        <p id="preco_7">Preço com margem 7%: R$ 0,00</p>
+        <p id="preco_10">Preço com margem 10%: R$ 0,00</p>
+        <p id="preco_15">Preço com margem 15%: R$ 0,00</p>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script>
+        function calcularShopee() {
+            let custo = parseFloat(document.getElementById('custo').value);
+
+            if (isNaN(custo) || custo <= 0) {
+                alert("Por favor, insira um valor de custo válido.");
+                return;
+            }
+
+            let impostos = 10; // 10% de impostos
+            let comissao = 20; // 20% de comissão da plataforma
+            let taxaFixa = 4; // Taxa fixa padrão da Shopee
+            let embalagem = 1.50; // Custo fixo de embalagem de R$ 1.50
+
+            function calcularPrecoVenda(margemContribuicaoDesejada) {
+                let margemDecimal = margemContribuicaoDesejada / 100;
+                let precoVenda = (custo + embalagem + taxaFixa) / (1 - margemDecimal - impostos / 100 - comissao / 100);
+                return precoVenda;
+            }
+
+            let precoVenda0 = calcularPrecoVenda(0);
+            let precoVenda7 = calcularPrecoVenda(7); // Adicionado o cálculo para margem de 7%
+            let precoVenda10 = calcularPrecoVenda(10);
+            let precoVenda15 = calcularPrecoVenda(15);
+
+            document.getElementById('preco_0').innerText = 'Preço com Margem de Contribuição 0%: R$ ' + precoVenda0.toFixed(2);
+            document.getElementById('preco_7').innerText = 'Preço com Margem de Contribuição 7%: R$ ' + precoVenda7.toFixed(2); // Adicionado o resultado para margem de 7%
+            document.getElementById('preco_10').innerText = 'Preço com Margem de Contribuição 10%: R$ ' + precoVenda10.toFixed(2);
+            document.getElementById('preco_15').innerText = 'Preço com Margem de Contribuição 15%: R$ ' + precoVenda15.toFixed(2);
+        }
+    </script>
+</body>
+</html>
