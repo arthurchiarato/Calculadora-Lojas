@@ -2,17 +2,17 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0); /* Gradiente suave no fundo */
+  min-height: 100vh; /* O corpo ocupa a altura total da página */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
 }
 
 .container {
   width: 360px;
-  max-width: 100%;
+  max-width: 100%; /* Garante que o container nunca ultrapasse a largura da tela */
   margin: auto;
   padding: 25px;
   background: #ffffff;
@@ -25,23 +25,16 @@ body {
 /* Ajustes para dispositivos móveis */
 @media screen and (max-width: 480px) {
   .container {
-    width: 90%;
-    padding: 20px;
+    width: 90%; /* Reduz a largura no celular para evitar que ocupe toda a tela */
+    padding: 20px; /* Ajusta o padding para manter o layout harmônico */
   }
 
   h1 {
-    font-size: 22px;
+    font-size: 22px; /* Diminui o tamanho do título em telas pequenas */
   }
 
   button {
-    font-size: 16px;
-  }
-
-  /* Ajuste para o botão de retorno em telas menores */
-  .return-button {
-    width: 60px; /* Tamanho menor em dispositivos móveis */
-    padding: 6px 12px;
-    font-size: 12px;
+    font-size: 16px; /* Ajusta o tamanho do texto dos botões */
   }
 }
 
@@ -101,7 +94,6 @@ footer p {
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s;
-  z-index: 999; /* Garante que o botão fique acima de outros elementos */
 }
 
 .return-button:hover {
