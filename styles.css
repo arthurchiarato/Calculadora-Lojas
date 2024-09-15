@@ -1,32 +1,33 @@
+/* Estilos globais */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #f5f5f5, #e0e0e0); /* Gradiente suave no fundo */
-  min-height: 100vh; /* O corpo ocupa a altura total da página */
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza o conteúdo horizontalmente */
-  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  align-items: center;
 }
 
 .container {
   width: 360px;
-  max-width: 100%; /* Garante que o container nunca ultrapasse a largura da tela */
-  margin: auto;
+  max-width: 100%;
   padding: 25px;
   background: #ffffff;
   border-radius: 15px;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
   border: 1px solid #e0e0e0;
   text-align: center;
+  margin: auto; /* Centraliza verticalmente e horizontalmente */
+  transform: translateY(-50px); /* Ajuste fino para centralizar mais no meio */
 }
 
 /* Ajustes para dispositivos móveis */
 @media screen and (max-width: 480px) {
   .container {
     width: 90%; /* Reduz a largura no celular para evitar que ocupe toda a tela */
-    padding: 20px; /* Ajusta o padding para manter o layout harmônico */
+    padding: 20px;
   }
 
   h1 {
@@ -66,21 +67,6 @@ button:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-footer {
-  background-color: #f0f0f0;
-  text-align: center;
-  padding: 20px 0;
-  position: relative;
-  width: 100%;
-  bottom: 0;
-}
-
-footer p {
-  margin: 0;
-  color: #333;
-  font-size: 14px;
-}
-
 .return-button {
   width: 70px;
   position: fixed;
@@ -98,4 +84,76 @@ footer p {
 
 .return-button:hover {
   background-color: #333;
+}
+
+footer {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Estilos do Cabeçalho */
+header {
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0;
+  width: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.header-logo img {
+  max-width: 50px; /* Tamanho da logo */
+  height: auto;
+}
+
+.header-nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px; /* Espaço entre os links */
+}
+
+.header-nav ul li {
+  display: inline-block;
+}
+
+.header-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.header-nav ul li a:hover {
+  color: #F4D000; /* Efeito hover para mudar a cor ao passar o mouse */
+}
+
+/* Responsivo para telas menores */
+@media screen and (max-width: 480px) {
+  header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
 }
