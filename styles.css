@@ -108,8 +108,9 @@ header {
   width: 100%;
   background-color: #000;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* Altera a direção do flexbox para alinhar os itens verticalmente */
+  justify-content: center; /* Centraliza a logo no meio */
+  align-items: center; /* Centraliza os itens horizontalmente */
   padding: 15px 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
@@ -118,6 +119,7 @@ header {
 .header-logo img {
   max-width: 50px; /* Tamanho da logo */
   height: auto;
+  margin-bottom: 10px; /* Adiciona um pequeno espaçamento entre a logo e a navegação */
 }
 
 .header-nav ul {
