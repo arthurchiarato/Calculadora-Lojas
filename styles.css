@@ -115,7 +115,7 @@ header {
   flex-direction: column; /* Altera a direção do flexbox para alinhar os itens verticalmente */
   justify-content: center; /* Centraliza a logo no meio */
   align-items: center; /* Centraliza os itens horizontalmente */
-  padding: 10px 20px; /* Reduzido para diminuir o tamanho do cabeçalho */
+  padding: 8px 20px; /* Reduzido para diminuir o tamanho do cabeçalho */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
